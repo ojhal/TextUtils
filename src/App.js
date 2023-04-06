@@ -3,17 +3,17 @@ import TextForm from './Components/TextForm';
 import React, { useState } from 'react';
 
 function App() {
-  const [mode,setMode] = useState('dark')
+  const [mode,setMode] = useState('light')
 
   const toggleMode = () => {
     console.log("toggled")
     if(mode === "light"){
       setMode("dark");
-      document.body.style.backgroundColor="white"
+      document.body.style.backgroundColor="#042743"
     }
     else{
       setMode("light");
-      document.body.style.backgroundColor="black"
+      document.body.style.backgroundColor="white"
     }
   }
   return (

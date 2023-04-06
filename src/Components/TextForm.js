@@ -19,10 +19,10 @@ export default function TextForm(props) {
     }
     return (
         <>
-            <div className='container'>
+            <div className='container' style={{color:props.mode==="dark"?"white":"#042743"}}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==="dark"?"grey":"white", color:props.mode==="dark"?"white":"black"}} id="myBox" rows="8"></textarea>
                     <br />
                     <button className='btn btn-primary' onClick={handleUpClick}>Convert to uppercase</button>
                     <button className='btn btn-primary mx-3' onClick={handleLowClick}>Convert to lowercase</button>
@@ -30,7 +30,7 @@ export default function TextForm(props) {
 
                 </div>
             </div>
-            <div className='container my-3'>
+            <div className='container my-3'  style={{color:props.mode==="dark"?"white":"#042743"}}>
                 <h1>
                     Your Text Summary
                 </h1>
