@@ -19,7 +19,7 @@ export default function TextForm(props) {
     }
     return (
         <>
-            <div className='container' style={{color:props.mode==="dark"?"white":"#042743"}}>
+            <div className='container' style={{color:props.mode==="dark"?"042743":"gray"}}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==="dark"?"grey":"white", color:props.mode==="dark"?"white":"black"}} id="myBox" rows="8"></textarea>
@@ -30,7 +30,7 @@ export default function TextForm(props) {
 
                 </div>
             </div>
-            <div className='container my-3'  style={{color:props.mode==="dark"?"white":"#042743"}}>
+            <div className='container my-3'  style={{color:props.mode==="dark"?"042743":"gray"}}>
                 <h1>
                     Your Text Summary
                 </h1>
