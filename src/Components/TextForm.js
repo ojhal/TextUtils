@@ -24,9 +24,9 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==="dark"?"grey":"white", color:props.mode==="dark"?"white":"black"}} id="myBox" rows="8"></textarea>
                     <br />
-                    <button className='btn btn-primary' onClick={handleUpClick}>Convert to uppercase</button>
-                    <button className='btn btn-primary mx-3' onClick={handleLowClick}>Convert to lowercase</button>
-                    <button className='btn btn-primary mx-3' onClick={handleExtraSpaces}>Remove extra spaces</button>
+                    <button disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleUpClick}>Convert to uppercase</button>
+                    <button disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleLowClick}>Convert to lowercase</button>
+                    <button disabled={text.length===0} className='btn btn-primary mx-3 my-1' onClick={handleExtraSpaces}>Remove extra spaces</button>
 
                 </div>
             </div>
@@ -35,11 +35,11 @@ export default function TextForm(props) {
                     Your Text Summary
                 </h1>
                 <p>
-                    {text.split(" ").length}  words and {text.length} characters
+                    {text.split(/\s+/).filter((ele)=>{return ele.length!==0}).length}  words and {text.length} characters
                 </p>
                 <p>{0.008*text.split(" ").length} Minuts read</p>
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Nothing to preview!"}</p>
             </div>
         </>
     )
